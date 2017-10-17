@@ -1,0 +1,42 @@
+server:
+  port: 443
+  session:
+    timeout: 100
+  tomcat:
+    uri-encoding: utf-8
+  context-path: /misty
+#Banner
+banner:
+  location: classpath:bannerc.txt
+
+spring:
+  #Cache
+  cache:
+    type: redis
+  #Redis
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    ssl: false
+#    pool:
+#      max-active:
+#      max-idle:
+#      min-idle:
+#      max-wait:
+    timeout: 6000
+  #Session
+  session:
+    store-type: redis
+    redis:
+      namespace: session
+  #数据源
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/misty
+    username: root
+    password: 10011001
+    driver-class-name: com.mysql.jdbc.Driver
+    #type: org.springframework.boot.jta.narayana.NarayanaDataSourceBean
+
+
